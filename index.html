@@ -1,37 +1,67 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
 <link rel="stylesheet" href="Styling.css"> <!-- link to styling.css-->
 </head>
 
-<body id="background"> <!-- only id class -->
+<body id="background"> <!-- #background, inorder to seperate and design background -->
 
-<div class="Form_Base"> <!--Make sure to use class and . when connecting css files-->
+  
 
-<h1 class="Header"> 
-  Tell us more about your vehicle
-</h1>
+  <div class="Container"> <!--Make sure to use class and . when connecting css files-->
 
-<form>
-  <label for="Year">Year Model</label>
-  <label for="Make">Car Make</label>
-  <label for="Model">Car Model</label>
-  <label for="Product_Type">Product Type</label>
-</form>
+    <h1 class="Header"> 
+      Tell us more about your vehicle
+    </h1>
 
+      <form>
 
+        
 
-<button class="ADD_VEHICLE_BUTTON">
-  Add Vehicle
-</button>
+        
 
 
+        <label for="Year">Year</label>
+        <!-- <select name="Year" id="Year"> -->
+        <select name="Year" id="Year" required>
+          
+          <option value="" selected disabled>--Year--</p></option>
+            
 
-</div>
+        </select>
 
-</body>
+      
+        <label for="Make">Make</label>
+        <select name="Make" id="Make" required>
+
+            <option value="" selected disabled>--Make--</p></option>
+            
+
+
+        </select>
+      
+        
+
+        <label for="Model">Model</label>
+        <label for="Product_Type">Product Type</label>
+
+      </form>
+
+
+
+<!-- <button class="ADD_VEHICLE_BUTTON"> Will add once input values are established-->
+  <!-- Add Vehicle -->   
+<!-- </button> -->
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
 
 
 </html>
