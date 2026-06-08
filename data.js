@@ -1,5 +1,5 @@
 
-//Stores different array values for SCALABILITYY
+// Vehicle catalog dataset used for dynamic dropdown filtering.
 const vehicleData = [
 
   {
@@ -152,4 +152,4 @@ const vehicleData = [
     model: "Corolla",
     productType: "Passenger Side Fender",
   }
-]
+];
