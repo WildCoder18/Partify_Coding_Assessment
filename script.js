@@ -24,6 +24,8 @@ for (let i = 0; i < Upd_year.length; i++) {
 
 let SelectedYear;
 let SelectedMake;
+let SelectedModel;
+
 
 
 //Filters out the appropriate sequence vehicles
@@ -49,7 +51,7 @@ document.getElementById("Year").addEventListener("change", (e) => {
   if (SelectProduct.length != 1) {
 
     //reset the element select
-    SelectModel.innerHTML = 
+    SelectProduct.innerHTML = 
     `<option value="" selected disabled>Select Product</option>`;
 
   }
@@ -103,7 +105,7 @@ document.getElementById("Make").addEventListener("change", (e) => {
   if (SelectProduct.length != 1) {
 
     //reset the element select
-    SelectModel.innerHTML = 
+    SelectProduct.innerHTML = 
     `<option value="" selected disabled>Select Product</option>`;
 
   }
@@ -135,10 +137,55 @@ document.getElementById("Make").addEventListener("change", (e) => {
   }
 
 
+});
 
-  
+
+  //ProductType Select script
+  document.getElementById("Model").addEventListener("change", (e) => {
+
+
+
+  if (SelectProduct.length != 1) {
+
+    //reset the element select
+    SelectProduct.innerHTML = 
+    `<option value="" selected disabled>Select Product</option>`;
+
+  }
+
+  SelectedModel = String(e.target.value);
+
+  const Filter_Model = vehicleData.filter(vehicle =>
+    vehicle.year === SelectedYear &&
+    vehicle.make === SelectedMake &&
+    vehicle.model === SelectedModel
+
+  );
+
+  const products = Filter_Model.map(vehicle => vehicle.productType);
+
+  const Upd_products = [...new Set(products)];
+
+  console.log("Product Set is:", Upd_products);
+
+
+  for (let i = 0; i < Upd_products.length; i++) {
+
+    const Product_opt = document.createElement("option");
+    Product_opt.value = Upd_products[i];
+    Product_opt.textContent = Upd_products[i];
+    SelectProduct.appendChild(Product_opt);
+
+  }
+
 
 });
+
+
+
+
+
+
 
 
 

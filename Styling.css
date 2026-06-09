@@ -15,7 +15,7 @@
     top: 10%;
     width: 450px;
     left: 220px;
-    height: 500px;
+    height: 550px;
     border-radius: 80px;
   
     background-color:beige;
@@ -50,12 +50,11 @@
 
   select {
 
-    
     margin-left: 55px;
     margin-bottom: 10px;
     border-radius: 8px;
     padding-left: 10px;
-    padding-right: 40px;
+    padding-right: 30px;
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -66,7 +65,17 @@
 
   /* All add vehicle button styling */
 
+  .Button_Container {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+  }
+
   .ADD_VEHICLE_BUTTON {
+
+    
+
     background-color: rgb(28, 62, 211);
     color: antiquewhite;
     border-width: 3px;
@@ -82,18 +91,24 @@
     padding-top: 12px;
     padding-left: 10px;
     padding-right: 10px;
+    transition: background-color 0.3s ease,
+    transform 0.3s ease;
+
+    width: 150px;
+    height: 50px;
     
     
   }
 
   .ADD_VEHICLE_BUTTON:hover {
-    background-color: rgb(23, 50, 172);
-    transition: 0.4s; 
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.18);
+    
+    background-color: rgb(22, 53, 145);
+    transform: scale(1.05);
+    
   }
 
   .ADD_VEHICLE_BUTTON:active {
-    opacity: 0.7;
+    opacity: 0.9;
   }
 
 
