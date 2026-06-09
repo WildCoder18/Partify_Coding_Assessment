@@ -7,14 +7,37 @@
     background-image: linear-gradient(to bottom right,rgb(58, 58, 202), rgb(250, 250, 250));
   }
 
+ 
+
+  .Logo_Image {
+
+
+    width: 100px;
+    height: auto;
+    
+    
+    transform: rotate(4deg);
+
+  }
+
+  .Logo_Container {
+
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    
+}
+
+
+
   .Container {
     display: inline-block;
-    margin: 10px;
-    padding: 5px;
+    margin: 5px;
+   
     position: absolute;
     top: 10%;
-    width: 450px;
-    left: 220px;
+    width: 460px;
+    left: 270px;
     height: 550px;
     border-radius: 80px;
   
@@ -32,10 +55,11 @@
     text-align: center;
     font-size: 19px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 10px;
-    margin-bottom: 50px;
-    padding-top: 18px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-top: 55px;
     color: black;
+    padding-bottom: 6px;
 
   }
 
@@ -44,13 +68,13 @@
     flex-direction: column;
     gap: 60px;
     margin: 10px;
-    margin-left: 60px;
+    margin-left: 90px;
 
   }
 
   select {
 
-    margin-left: 55px;
+    margin-left: 80px;
     margin-bottom: 10px;
     border-radius: 8px;
     padding-left: 10px;

@@ -209,12 +209,16 @@ document.getElementById("Vehicle_Form").addEventListener("submit", (e) => {
 
   if (Check_Vehicle) {
 
-    SelectedMake = SelectedMake.toLowerCase();
-    SelectedProduct = SelectedProduct.replaceAll(" ", "+");
+    Url_Product = SelectedProduct.replaceAll(" ", "+");
     
-    Vehicle_Url = 'https://partifyusa.com/collections/${SelectedYear}'
+    Vehicle_Url = `https://partifyusa.com/collections/${SelectedYear}-${SelectedMake}-${SelectedModel}?filter.p.product_type=${Url_Product }`;
+    
+    
+    // https://partifyusa.com/collections/2016-Toyota-Camry?filter.p.product_type=Front+Bumper
+
     
 
+    window.location.href = Vehicle_Url;
 
   }
   else {

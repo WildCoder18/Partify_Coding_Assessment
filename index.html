@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="en" lang="en">
+<html lang="en">
 
-<head>
-<link rel="stylesheet" href="Styling.css"> <!-- link to styling.css-->
-</head>
+  <head>
+    <link rel="stylesheet" href="Styling.css"> <!-- link to styling.css-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 
 <body id="background"> <!-- #background, inorder to seperate and design background -->
 
-  
+ 
 
   <div class="Container"> <!--Make sure to use class and . when connecting css files-->
 
-
+    <div class="Logo_Container">
+      <img class="Logo_Image" src="PartifyLogo_BASE.png" alt="Partify logo">
+    </div>
   
 
   
@@ -21,13 +24,13 @@
       Tell us more about your vehicle
     </h1>
 
-    <form id="Vehicle_Form">
+    <form id="Vehicle_Form" autocomplete="off">
         
       <label for="Year">Year</label>
       <!-- <select name="Year" id="Year"> -->
         <select name="Year" id="Year" required>
           
-          <option value="" selected disabled>Select Year</p></option>
+          <option value="" selected disabled>Select Year</option>
             
 
         </select>
@@ -36,7 +39,7 @@
         <label for="Make">Make</label>
         <select name="Make" id="Make" required>
 
-          <option value="" selected disabled>Select Make</p></option>
+          <option value="" selected disabled>Select Make</option>
             
 
 
@@ -47,7 +50,7 @@
         <label for="Model">Model</label>
         <select name="Model" id="Model" required>
           
-          <option value="" selected disabled>Select Model</p></option>
+          <option value="" selected disabled>Select Model</option>
             
 
         </select>
@@ -56,7 +59,7 @@
         <label for="Product">Product Type</label>
         <select name="Product" id="Product" required>
           
-          <option value="" selected disabled>Select Product Type</p></option>
+          <option value="" selected disabled>Select Product Type</option>
             
 
         </select>
