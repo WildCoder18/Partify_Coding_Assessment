@@ -25,6 +25,7 @@ for (let i = 0; i < Upd_year.length; i++) {
 let SelectedYear;
 let SelectedMake;
 let SelectedModel;
+let SelectedProduct;
 
 
 
@@ -143,7 +144,7 @@ document.getElementById("Make").addEventListener("change", (e) => {
   //ProductType Select script
   document.getElementById("Model").addEventListener("change", (e) => {
 
-
+    
 
   if (SelectProduct.length != 1) {
 
@@ -178,6 +179,48 @@ document.getElementById("Make").addEventListener("change", (e) => {
 
   }
 
+
+});
+
+document.getElementById("Product").addEventListener("change", (e) => {
+
+  SelectedProduct = String(e.target.value);
+
+});
+
+
+//Generate the URLS
+document.getElementById("Vehicle_Form").addEventListener("submit", (e) => {
+
+  //Prevents form from trying to go to the URL itself
+  e.preventDefault();
+
+  console.log("Form submitted!");
+
+  //Method for finding data that aligns with users choices
+  const Check_Vehicle = vehicleData.find(vehicle =>
+
+    vehicle.year === SelectedYear &&
+    vehicle.make === SelectedMake &&
+    vehicle.model === SelectedModel &&
+    vehicle.productType === SelectedProduct
+
+  );
+
+  if (Check_Vehicle) {
+
+    SelectedMake = SelectedMake.toLowerCase();
+    SelectedProduct = SelectedProduct.replaceAll(" ", "+");
+    
+    Vehicle_Url = 'https://partifyusa.com/collections/${SelectedYear}'
+    
+
+
+  }
+  else {
+
+    console.log("Error: No Vehicle found")
+  }
 
 });
 
