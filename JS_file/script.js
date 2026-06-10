@@ -21,7 +21,7 @@ const years = vehicleData.map(vehicle => vehicle.year);
 
 // Creates new year set that excludes duplicates
 const Upd_year = [...new Set(years)];
-console.log(Upd_year);
+
 
 
 // Makes sure each year is assigned as an option
@@ -93,7 +93,7 @@ document.getElementById("Year").addEventListener("change", (e) => {
   
   //Create a set that has no duplicates
   const Upd_makes = [...new Set(makes)];
-  console.log("Make Set is:", Upd_makes);
+  
 
   
   /*Same formula to populate options, except this
@@ -257,7 +257,7 @@ document.getElementById("Vehicle_Form").addEventListener("submit", (e) => {
 
   e.preventDefault();
 
-  console.log("Form submitted!");
+  
 
 
   //Method for finding data that aligns with users choices
@@ -301,7 +301,7 @@ document.getElementById("Vehicle_Form").addEventListener("submit", (e) => {
   else {
 
     alert("Error: No Vehicle found");
-    console.log("Error: No Vehicle found")
+    
   }
 
 });
