@@ -1,96 +1,119 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-  <head>
-    <link rel="stylesheet" href="Styling.css"> <!-- link to styling.css-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+<head>
+  <!-- Link to external CSS file for styling -->
 
-<body id="background"> <!-- #background, inorder to seperate and design background -->
+  <link rel="stylesheet" href="Styling.css">
 
- 
 
-  <div class="Container"> <!--Make sure to use class and . when connecting css files-->
+  <!-- Makes layout responsive on different screen sizes -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body id="background">
+
+
+  <!-- Main container holding the form and logo -->
+
+  <div class="Container">
+
+    <!-- Logo section (kept separate so it can be positioned independently of form layout) -->
 
     <div class="Logo_Container">
+
       <img class="Logo_Image" src="PartifyLogo_BASE.png" alt="Partify logo">
+
     </div>
-  
 
-  
 
-    <h1 class="Header"> 
+    <!-- Page heading -->
+
+    <h1 class="Header">
+
       Tell us more about your vehicle
+
     </h1>
+
+
+    <!-- Vehicle selection form -->
 
     <form id="Vehicle_Form" autocomplete="off">
 
-        
-        
+
+      <!-- Year dropdown -->
+
       <label for="Year">Year</label>
-      <!-- <select name="Year" id="Year"> -->
-        
-        
-        <select name="Year" id="Year" required>
-          
-          <option value="" selected disabled>Select Year</option>
-            
 
-        </select>
+      <select name="Year" id="Year" required>
 
-        
-      
-        <label for="Make">Make</label>
-        <select name="Make" id="Make" required>
+        <option value="" selected disabled>Select Year</option>
 
-          <option value="" selected disabled>Select Make</option>
-            
+      </select>
 
 
-        </select>
-      
-        
+      <!-- Make dropdown (populated dynamically based on Year) -->
 
-        <label for="Model">Model</label>
-        <select name="Model" id="Model" required>
-          
-          <option value="" selected disabled>Select Model</option>
-            
+      <label for="Make">Make</label>
 
-        </select>
-        
-        
+      <select name="Make" id="Make" required>
 
-        <label for="Product">Product Type</label>
-        <select name="Product" id="Product" required>
-          
-          <option value="" selected disabled>Select Product Type</option>
-            
+        <option value="" selected disabled>Select Make</option>
 
-        </select>
-
-      
-        <div class="Button_Container">
-          <button class="ADD_VEHICLE_BUTTON" type="submit"> 
-          Add Vehicle 
-          </button> 
-        </div>
-
-        
-
-      </form>
+      </select>
 
 
-      
+      <!-- Model dropdown (depends on Year + Make) -->
 
-    </div>
-    
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    
+      <label for="Model">Model</label>
 
-  </body>
+      <select name="Model" id="Model" required>
 
+        <option value="" selected disabled>Select Model</option>
+
+      </select>
+
+
+      <!-- Product Type dropdown (depends on Year + Make + Model) -->
+
+      <label for="Product">Product Type</label>
+
+      <select name="Product" id="Product" required>
+
+        <option value="" selected disabled>Select Product Type</option>
+
+      </select>
+
+
+      <!-- Submit button section -->
+
+      <div class="Button_Container">
+
+        <button class="ADD_VEHICLE_BUTTON" type="submit">
+
+          Add Vehicle
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+
+  <!-- External JavaScript files -->
+  <!-- data.js contains vehicle dataset -->
+
+  <script src="data.js"></script>
+
+
+  <!-- script.js handles dropdown logic and URL generation -->
+   
+  <script src="script.js"></script>
+
+</body>
 
 </html>
