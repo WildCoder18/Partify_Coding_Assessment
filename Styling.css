@@ -33,8 +33,9 @@
 
 .Container {
   position: absolute;
-  top: 5%;
-  left: 270px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   width: 460px;
   height: 550px;
