@@ -35,11 +35,12 @@
     margin: 5px;
    
     position: absolute;
-    top: 10%;
+    top: 5%;
     width: 460px;
     left: 270px;
     height: 550px;
     border-radius: 80px;
+    padding-bottom: 20px;
   
     background-color:beige;
     
@@ -91,6 +92,15 @@
 
   }
 
+  hr {
+
+    left: 10px;
+    width: 70%;
+    height: 1px;
+    background-color: black;
+
+  }
+
 
   
   
@@ -101,7 +111,7 @@
 
     display: flex;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 20px;
   }
 
   .ADD_VEHICLE_BUTTON {

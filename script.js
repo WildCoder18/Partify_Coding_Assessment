@@ -1,4 +1,5 @@
 
+// Variables for the select element inindex.html
 const SelectYear = document.getElementById("Year");
 
 const SelectMake = document.getElementById("Make");
@@ -7,21 +8,36 @@ const SelectModel = document.getElementById("Model");
 
 const SelectProduct = document.getElementById("Product");
 
+//Disable all other element select except for year
+//Makes sure user picks Year first
+SelectMake.disabled = true;
+SelectModel.disabled = true;
+SelectProduct.disabled = true;
+
+
+// Turns only year data into a Set
+// Contains all years found in data set
 const years = vehicleData.map(vehicle => vehicle.year);
+
+// Creates new year set that excludes duplicates
 const Upd_year = [...new Set(years)];
 console.log(Upd_year);
 
 
+// Makes sure each year is assigned as an option
+// Only shows unique years from data thanks to Upd_year
 for (let i = 0; i < Upd_year.length; i++) {
 
   const Year_opt = document.createElement("option");
   Year_opt.value = Upd_year[i];
   Year_opt.textContent = Upd_year[i];
-
   SelectYear.appendChild(Year_opt);
+
 }
 
-
+// Declared outside so each listener can access.
+  /* Used to filter only data that contains what -
+     user has selected */
 let SelectedYear;
 let SelectedMake;
 let SelectedModel;
@@ -30,10 +46,19 @@ let SelectedProduct;
 
 
 //Filters out the appropriate sequence vehicles
+// Creates Make options using Year listener
 
 document.getElementById("Year").addEventListener("change", (e) => {
 
- 
+  /*Makes sure user is only able to access Make after
+    the Year has been selected. */
+  SelectMake.disabled = false;
+  SelectModel.disabled = true;
+  SelectProduct.disabled = true;
+
+  /*Just in case if the user changes their Year,
+    the Make, Model, and Product will reset
+    to only display the placeholder */
 
   if (SelectMake.length != 1) {
 
@@ -57,13 +82,12 @@ document.getElementById("Year").addEventListener("change", (e) => {
 
   }
 
-  
-
-  SelectedYear = Number(e.target.value); //Store whatever the user has selected as a number
+  //Store whatever the user has selected as a number
+  SelectedYear = Number(e.target.value); 
 
 
   //Only choose the data that aligns with the picked year
-  const Filter_Year = vehicleData.filter(vehicle => vehicle.year == SelectedYear); 
+  const Filter_Year = vehicleData.filter(vehicle => vehicle.year === SelectedYear); 
 
 
   //Turn data into an array with only makes
@@ -93,6 +117,9 @@ document.getElementById("Year").addEventListener("change", (e) => {
 
 document.getElementById("Make").addEventListener("change", (e) => {
 
+
+  SelectModel.disabled = false;
+  SelectProduct.disabled = true;
   
 
   if (SelectModel.length != 1) {
@@ -110,6 +137,7 @@ document.getElementById("Make").addEventListener("change", (e) => {
     `<option value="" selected disabled>Select Product</option>`;
 
   }
+
 
   SelectedMake = String(e.target.value);
 
@@ -144,6 +172,7 @@ document.getElementById("Make").addEventListener("change", (e) => {
   //ProductType Select script
   document.getElementById("Model").addEventListener("change", (e) => {
 
+    SelectProduct.disabled = false;
     
 
   if (SelectProduct.length != 1) {
@@ -209,9 +238,11 @@ document.getElementById("Vehicle_Form").addEventListener("submit", (e) => {
 
   if (Check_Vehicle) {
 
-    Url_Product = SelectedProduct.replaceAll(" ", "+");
+    const Url_Model = SelectedModel.replaceAll(" ","+");
+    const Url_Product = SelectedProduct.replaceAll(" ", "+");
     
-    Vehicle_Url = `https://partifyusa.com/collections/${SelectedYear}-${SelectedMake}-${SelectedModel}?filter.p.product_type=${Url_Product }`;
+    
+    const Vehicle_Url = `https://partifyusa.com/collections/${SelectedYear}-${SelectedMake}-${Url_Model}?filter.p.product_type=${Url_Product}`;
     
     
     // https://partifyusa.com/collections/2016-Toyota-Camry?filter.p.product_type=Front+Bumper
